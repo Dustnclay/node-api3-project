@@ -9,7 +9,7 @@ router.post('/', validateUser,(req, res) => {
   // do your magic!
   const user = req.body
   db.insert(user)
-  .then(user => res.status(200).json(user)
+  .then(update => res.status(200).json(update)
   .catch(err => res.status(500).json({message:"error posting"}))
   )
 });

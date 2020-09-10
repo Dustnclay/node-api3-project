@@ -1,5 +1,6 @@
 // code away!
-const port = 5000;
+require('dotenv').config();
+const port = process.env.port || 5000;
 const server = require('./server')
 const express = require('express')
 // server.use(express.json())

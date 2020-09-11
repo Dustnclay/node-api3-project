@@ -17,9 +17,11 @@ server.use(logger)
 
 
 server.get('/', (req, res) => {
-  res.send(`<h2>Let's write some middleware!</h2>`);
+  const MOTD = process.env.MOTD || 'ello from NOT the .env';
+
+  res.status(200).json({motd:MOTD});
 });
-server.use('/users',userRouter)
+server.use('/users',userRouter) 
 // server.use('/posts',postRouter)
 
 
